@@ -22,7 +22,7 @@ The changelog can be found in the [release section](https://github.com/Bodo1981/
 Please fill any issues here [issue page](https://github.com/Bodo1981/conductor-dagger/issues)
 
 # Usage
-1. Install [ConductorInjectionModule](https://github.com/Bodo1981/conductor-dagger/blob/master/library/src/main/java/com/christianbahl/conductor/ConductorInjectionModule.java) in your application component to ensure that all bindings necessary for these base types are available.
+1. Install [ConductorInjectionModule](https://github.com/Bodo1981/conductor-dagger/blob/master/library/src/main/java/com/christianbahl/conductor/ConductorInjectionModule.java) in your application component to ensure that all bindings necessary for these base types are available
     ```java
     @Singleton @Component(modules = { ConductorInjectionModule.class, ... }) public interface AppComponent {
       void inject(CustomApplication application);
@@ -37,7 +37,7 @@ Please fill any issues here [issue page](https://github.com/Bodo1981/conductor-d
     }
     ```
 
-    If your controller depends on controller specific stuff you can set this stuff by overriding the seedInstance method in the builder (e.g. YourControllerModule provides the simple class name of the controller).
+    If your controller depends on controller specific stuff you can set this stuff by overriding the seedInstance method in the builder (e.g. YourControllerModule provides the simple class name of the controller)
     ```java
     @ScreenScope @Subcomponent(modules = { YourControllerModule.class }) public interface MainComponent extends AndroidInjector<YourController> {
       @Subcomponent.Builder abstract class Builder extends AndroidInjector.Builder<YourController> {
@@ -63,20 +63,44 @@ Please fill any issues here [issue page](https://github.com/Bodo1981/conductor-d
     interface YourApplicationComponent {}
     ```
     
-4. Next, make your Application implement [HasDispatchingControllerInjector](https://github.com/Bodo1981/conductor-dagger/blob/master/library/src/main/java/com/christianbahl/conductor/HasDispatchingControllerInjector.java) and @Inject a DispatchingAndroidInjector<Controller> to return from the controllerInjector() method:
+4. Next, make your Application implement [HasDispatchingControllerInjector](https://github.com/Bodo1981/conductor-dagger/blob/master/library/src/main/java/com/christianbahl/conductor/HasDispatchingControllerInjector.java) and @Inject a DispatchingAndroidInjector<Controller> to return from the controllerInjector() method
     ```java
     public class YourApplication extends Application implements HasDispatchingControllerInjector {
        @Inject DispatchingAndroidInjector<Controller> dispatchingControllerInjector;
 
        @Override public void onCreate() {
          super.onCreate();
-         
          DaggerYourApplicationComponent.create().inject(this);
        }
 
        @Override public DispatchingAndroidInjector<Controller> controllerInjector() {
          return dispatchingControllerInjector;
        }
+    }
+    ```
+   
+   You can also use your Activity as [HasDispatchingControllerInjector](https://github.com/Bodo1981/conductor-dagger/blob/master/library/src/main/java/com/christianbahl/conductor/HasDispatchingControllerInjector.java)
+   ```java
+   public class MainActivity extends AppCompatActivity implements HasDispatchingControllerInjector {
+      @Inject DispatchingAndroidInjector<Controller> dispatchingControllerInjector;
+      private Router router;
+
+      @Override protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        DaggerYourActivityComponent.create().inject(this);
+        setContentView(R.layout.activity_main);
+        
+        router = Conductor.attachRouter(this, container, savedInstanceState);
+        if (!router.hasRootController()) {
+          router.setRoot(RouterTransaction.with(new MainController()));
+        }
+      }
+
+      @Override public void onBackPressed() {
+        if (!router.handleBack()) {
+          super.onBackPressed();
+        }
+      }
     }
     ```
 
