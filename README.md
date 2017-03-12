@@ -14,13 +14,13 @@ dependencies {
 ```
 
 ## Changelog
-The changelog can be found in the [release section](https://github.com/Bodo1981/dagger-conductor/releases)
+The changelog can be found in the [release section](https://github.com/Bodo1981/conductor-dagger/releases)
 
 ## Issues
-Please fill any issues here [issue page](https://github.com/Bodo1981/dagger-conductor/issues)
+Please fill any issues here [issue page](https://github.com/Bodo1981/conductor-dagger/issues)
 
 # Usage
-1. Install [ConductorInjectionModule](https://github.com/Bodo1981/dagger-conductor/blob/master/library/src/main/java/com/christianbahl/conductor/dagger/ConductorInjectionModule.java) in your application component to ensure that all bindings necessary for these base types are available.
+1. Install [ConductorInjectionModule](https://github.com/Bodo1981/conductor-dagger/blob/master/library/src/main/java/com/christianbahl/conductor/dagger/ConductorInjectionModule.java) in your application component to ensure that all bindings necessary for these base types are available.
     ```java
     @Singleton @Component(modules = { ConductorInjectionModule.class, ... }) public interface AppComponent {
       void inject(CustomApplication application);
@@ -61,7 +61,7 @@ Please fill any issues here [issue page](https://github.com/Bodo1981/dagger-cond
     interface YourApplicationComponent {}
     ```
     
-4. Next, make your Application implement [HasDispatchingControllerInjector](https://github.com/Bodo1981/dagger-conductor/blob/master/library/src/main/java/com/christianbahl/conductor/dagger/HasDispatchingControllerInjector.java) and @Inject a DispatchingAndroidInjector<Controller> to return from the controllerInjector() method:
+4. Next, make your Application implement [HasDispatchingControllerInjector](https://github.com/Bodo1981/conductor-dagger/blob/master/library/src/main/java/com/christianbahl/conductor/dagger/HasDispatchingControllerInjector.java) and @Inject a DispatchingAndroidInjector<Controller> to return from the controllerInjector() method:
     ```java
     public class YourApplication extends Application implements HasDispatchingControllerInjector {
        @Inject DispatchingAndroidInjector<Controller> dispatchingControllerInjector;
