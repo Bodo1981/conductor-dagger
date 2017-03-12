@@ -5,7 +5,7 @@ package com.christianbahl.conductor.dagger.sample.controller;
  */
 
 import com.bluelinelabs.conductor.Controller;
-import com.christianbahl.conductor.dagger.ControllerKey;
+import com.christianbahl.conductor.ControllerKey;
 import dagger.Binds;
 import dagger.Module;
 import dagger.android.AndroidInjector;

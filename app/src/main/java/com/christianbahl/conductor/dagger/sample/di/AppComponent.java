@@ -1,6 +1,6 @@
 package com.christianbahl.conductor.dagger.sample.di;
 
-import com.christianbahl.conductor.dagger.ConductorInjectionModule;
+import com.christianbahl.conductor.ConductorInjectionModule;
 import com.christianbahl.conductor.dagger.sample.CustomApplication;
 import com.christianbahl.conductor.dagger.sample.controller.MainModule;
 import dagger.Component;

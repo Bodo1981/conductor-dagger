@@ -1,4 +1,4 @@
-package com.christianbahl.conductor.dagger;
+package com.christianbahl.conductor;
 
 import com.bluelinelabs.conductor.Controller;
 import dagger.android.DispatchingAndroidInjector;

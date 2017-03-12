@@ -2,7 +2,7 @@ package com.christianbahl.conductor.dagger.sample;
 
 import android.app.Application;
 import com.bluelinelabs.conductor.Controller;
-import com.christianbahl.conductor.dagger.HasDispatchingControllerInjector;
+import com.christianbahl.conductor.HasDispatchingControllerInjector;
 import com.christianbahl.conductor.dagger.sample.di.DaggerAppComponent;
 import dagger.android.DispatchingAndroidInjector;
 import javax.inject.Inject;

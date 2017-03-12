@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.bluelinelabs.conductor.Controller;
-import com.christianbahl.conductor.dagger.ConductorInjection;
+import com.christianbahl.conductor.ConductorInjection;
 import com.christianbahl.conductor.dagger.sample.R;
 import javax.inject.Inject;
 import javax.inject.Named;

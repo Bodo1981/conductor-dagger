@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
 
+ext {
+  artifact = 'conductor-dagger-android'
+}
+
 def globalConf = rootProject.ext
 
 android {
@@ -27,3 +31,6 @@ dependencies {
   compile dependencies.conductor
   compile dependencies.daggerAndroid
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/Bodo1981/bintray/master/bintray.gradle'

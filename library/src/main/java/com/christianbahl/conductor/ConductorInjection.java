@@ -1,4 +1,4 @@
-package com.christianbahl.conductor.dagger;
+package com.christianbahl.conductor;
 
 import android.app.Activity;
 import android.util.Log;

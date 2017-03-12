@@ -8,6 +8,7 @@ ext {
   libraryDescription = 'This is a dagger extension for the conductor library'
 
   siteUrl = 'https://github.com/Bodo1981/conductor-dagger'
+  gitIssueUrl = 'https://github.com/Bodo1981/conductor-dagger/issues'
   gitUrl = 'https://github.com/Bodo1981/conductor-dagger.git'
 
   libraryVersion = '1.0.0'
