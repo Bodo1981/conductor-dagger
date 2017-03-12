@@ -1,7 +1,9 @@
 # dagger-conductor
 Extension to use conductor with the new dagger.android (com.google.dagger:dagger-android-support) module.
 
-Description: https://google.github.io/dagger/android.html
+Used libraries:
+Dagger 2 (2.10-rc4): https://github.com/google/dagger
+Conductor (2.1.1): https://github.com/bluelinelabs/Conductor
 
 # Install
 [ ![Download](https://api.bintray.com/packages/bodo1981/maven/conductor-dagger/images/download.svg) ](https://bintray.com/bodo1981/maven/conductor-dagger/_latestVersion)
