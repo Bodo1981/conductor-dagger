@@ -9,6 +9,9 @@ import com.bluelinelabs.conductor.Router;
 import com.bluelinelabs.conductor.RouterTransaction;
 import com.christianbahl.conductor.dagger.sample.controller.MainController;
 
+/**
+ * Created by cbahl on 12.03.17.
+ */
 public class MainActivity extends AppCompatActivity {
 
   private Router router;

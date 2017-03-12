@@ -9,8 +9,6 @@ import javax.inject.Singleton;
 /**
  * Created by cbahl on 12.03.17.
  */
-
 @Singleton @Component(modules = { ConductorInjectionModule.class, MainModule.class }) public interface AppComponent {
-
   void inject(CustomApplication application);
 }

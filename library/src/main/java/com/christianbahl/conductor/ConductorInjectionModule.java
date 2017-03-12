@@ -9,7 +9,6 @@ import java.util.Map;
 /**
  * Created by cbahl on 12.03.17.
  */
-
 @Module public abstract class ConductorInjectionModule {
 
   private ConductorInjectionModule() {

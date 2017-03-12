@@ -8,7 +8,6 @@ import javax.inject.Named;
  * Created by cbahl on 12.03.17.
  */
 @Module public class ScreenModule {
-
   private String controllerName;
 
   public ScreenModule(String controllerName) {

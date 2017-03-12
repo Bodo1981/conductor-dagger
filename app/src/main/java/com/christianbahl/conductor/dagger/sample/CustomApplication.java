@@ -10,18 +10,16 @@ import javax.inject.Inject;
 /**
  * Created by cbahl on 12.03.17.
  */
-
 public class CustomApplication extends Application implements HasDispatchingControllerInjector {
-
   @Inject protected DispatchingAndroidInjector<Controller> dispatchingControllerInjector;
+
+  @Override public DispatchingAndroidInjector<Controller> controllerInjector() {
+    return dispatchingControllerInjector;
+  }
 
   @Override public void onCreate() {
     super.onCreate();
 
     DaggerAppComponent.create().inject(this);
-  }
-
-  @Override public DispatchingAndroidInjector<Controller> controllerInjector() {
-    return dispatchingControllerInjector;
   }
 }

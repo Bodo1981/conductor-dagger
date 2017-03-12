@@ -9,7 +9,6 @@ import dagger.internal.Preconditions;
 /**
  * Created by cbahl on 12.03.17.
  */
-
 public class ConductorInjection {
 
   public static void inject(Controller controller) {

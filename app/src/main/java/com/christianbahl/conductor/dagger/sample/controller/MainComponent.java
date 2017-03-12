@@ -9,7 +9,6 @@ import dagger.android.AndroidInjector;
  * Created by cbahl on 12.03.17.
  */
 @ScreenScope @Subcomponent(modules = { ScreenModule.class }) public interface MainComponent extends AndroidInjector<MainController> {
-
   @Subcomponent.Builder abstract class Builder extends AndroidInjector.Builder<MainController> {
     public abstract Builder screenModule(ScreenModule screenModule);
 

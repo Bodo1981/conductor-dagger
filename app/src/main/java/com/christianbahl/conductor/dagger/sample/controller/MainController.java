@@ -14,9 +14,7 @@ import javax.inject.Named;
 /**
  * Created by cbahl on 12.03.17.
  */
-
 public class MainController extends Controller {
-
   @Inject @Named("controllerName") String controllerName;
 
   @NonNull @Override protected View onCreateView(@NonNull LayoutInflater layoutInflater, @NonNull ViewGroup viewGroup) {
