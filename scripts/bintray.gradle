@@ -2,7 +2,7 @@ ext {
   bintrayRepo = 'maven'
   bintrayName = 'conductor-dagger'
 
-  publishedGroupId = 'com.christianbahl.conductor.dagger'
+  publishedGroupId = 'com.christianbahl.conductor'
   libraryName = 'conductor-dagger'
 
   libraryDescription = 'This is a dagger extension for the conductor library'
