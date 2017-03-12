@@ -1,0 +1,24 @@
+ext {
+  bintrayRepo = 'maven'
+  bintrayName = 'conductor-dagger'
+
+  publishedGroupId = 'com.christianbahl.conductor.dagger'
+  libraryName = 'conductor-dagger'
+
+  libraryDescription = 'This is a dagger extension for the conductor library'
+
+  siteUrl = 'https://github.com/Bodo1981/conductor-dagger'
+  gitUrl = 'https://github.com/Bodo1981/conductor-dagger.git'
+
+  libraryVersion = '1.0.0'
+
+  developerId = 'Bodo1981'
+  developerName = 'Christian Bahl'
+  developerEmail = 'christian.bahl@gmail.com'
+
+  licenseName = 'The Apache Software License, Version 2.0'
+  licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+  allLicenses = ["Apache-2.0"]
+
+  labels = ["android", "conductor", "dagger2"]
+}

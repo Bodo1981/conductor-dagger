@@ -1,0 +1,17 @@
+ext {
+  minSdkVersion = 16
+  compileSdkVersion = 25
+  targetSdkVersion = 25
+  buildToolsVersion = "25.0.2"
+  versionCode = 1
+  versionName = "1.0.0"
+
+  supportVersion = "25.2.0"
+  daggerVersion = "2.10-rc4"
+  conductorVersion = "2.1.1"
+
+  dependencies = [design        : "com.android.support:design:$supportVersion",
+                  daggerCompiler: "com.google.dagger:dagger-compiler:$daggerVersion",
+                  daggerAndroid : "com.google.dagger:dagger-android-support:$daggerVersion",
+                  conductor     : "com.bluelinelabs:conductor:$conductorVersion"]
+}

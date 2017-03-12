@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+
+def globalConf = rootProject.ext
+
+android {
+  compileSdkVersion globalConf.compileSdkVersion
+  buildToolsVersion globalConf.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion globalConf.minSdkVersion
+    targetSdkVersion globalConf.targetSdkVersion
+    versionCode globalConf.versionCode
+    versionName globalConf.versionName
+
+    consumerProguardFiles 'proguard-rules.pro'
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+}
+
+dependencies {
+  Map<String, String> dependencies = globalConf.dependencies
+
+  compile dependencies.conductor
+  compile dependencies.daggerAndroid
+}

@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+def globalConf = rootProject.ext
+
+android {
+  compileSdkVersion globalConf.compileSdkVersion
+  buildToolsVersion globalConf.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion globalConf.minSdkVersion
+    targetSdkVersion globalConf.targetSdkVersion
+    versionCode globalConf.versionCode
+    versionName globalConf.versionName
+
+    defaultConfig {
+      applicationId "com.christianbahl.conductor.dagger.sample"
+      minSdkVersion globalConf.minSdkVersion
+      targetSdkVersion globalConf.targetSdkVersion
+      versionCode globalConf.versionCode
+      versionName globalConf.versionName
+    }
+  }
+}
+
+dependencies {
+  Map<String, String> dependencies = globalConf.dependencies
+
+  compile project(":library")
+  compile dependencies.design
+  annotationProcessor dependencies.daggerCompiler
+}
