@@ -13,7 +13,7 @@ public class ConductorInjection {
 
   public static void inject(Controller controller) {
     Preconditions.checkNotNull(controller, "controller");
-    HasDispatchingControllerInjector hasDispatchingControllerInjector = findHasControllerInjector(controller);
+    HasControllerInjector hasDispatchingControllerInjector = findHasControllerInjector(controller);
     Log.d("dagger.android", String.format("An injector for %s was found in %s", controller.getClass().getCanonicalName(),
         hasDispatchingControllerInjector.getClass().getCanonicalName()));
     DispatchingAndroidInjector<Controller> controllerInjector = hasDispatchingControllerInjector.controllerInjector();
@@ -22,25 +22,25 @@ public class ConductorInjection {
     controllerInjector.inject(controller);
   }
 
-  private static HasDispatchingControllerInjector findHasControllerInjector(Controller controller) {
+  private static HasControllerInjector findHasControllerInjector(Controller controller) {
     Controller parentController = controller;
 
     do {
       if ((parentController = parentController.getParentController()) == null) {
         Activity activity = controller.getActivity();
-        if (activity instanceof HasDispatchingControllerInjector) {
-          return (HasDispatchingControllerInjector) activity;
+        if (activity instanceof HasControllerInjector) {
+          return (HasControllerInjector) activity;
         }
 
-        if (activity.getApplication() instanceof HasDispatchingControllerInjector) {
-          return (HasDispatchingControllerInjector) activity.getApplication();
+        if (activity.getApplication() instanceof HasControllerInjector) {
+          return (HasControllerInjector) activity.getApplication();
         }
 
         throw new IllegalArgumentException(
             String.format("No injector was found for %s", new Object[] { controller.getClass().getCanonicalName() }));
       }
-    } while (!(parentController instanceof HasDispatchingControllerInjector));
+    } while (!(parentController instanceof HasControllerInjector));
 
-    return (HasDispatchingControllerInjector) parentController;
+    return (HasControllerInjector) parentController;
   }
 }
