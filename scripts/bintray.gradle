@@ -11,7 +11,7 @@ ext {
   gitIssueUrl = 'https://github.com/Bodo1981/conductor-dagger/issues'
   gitUrl = 'https://github.com/Bodo1981/conductor-dagger.git'
 
-  libraryVersion = '2.1.1'
+  libraryVersion = '2.1.3'
 
   developerId = 'Bodo1981'
   developerName = 'Christian Bahl'
